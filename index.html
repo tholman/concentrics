@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+	<head>
+		<title> Concentrics </title>
+
+		<!-- CSS -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+
+		<!-- JS -->
+		<script type="text/javascript" src="js/libs/dat.gui.min.js"></script>
+		<script type="text/javascript" src="js/Concentrics.js"></script>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-22825241-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+
+		<!-- UI -->
+		<script>
+			window.onload = function() {
+				Concentrics.init();
+				var gui = new dat.GUI();
+
+				var radiusFolder = gui.addFolder( 'Sizing' );
+				radiusFolder.add(Concentrics, 'baseRadius', 5, 100).name( 'Size' );
+				radiusFolder.add(Concentrics, 'randomRadiusVariance', 0, 50).name( 'Randomness' );
+				radiusFolder.add(Concentrics, 'innerRingSize', 1, 15).step(1).name( 'Inner Rings' );
+				radiusFolder.add(Concentrics, 'outerRingSize', 1, 15).step(1).name( 'Outer Rings' );
+				radiusFolder.open();
+
+				var spacingFolder = gui.addFolder( 'Spacing' );
+				spacingFolder.add(Concentrics, 'spacingX', 10, 100).name( 'X' );
+			  	spacingFolder.add(Concentrics, 'spacingY', 10, 100).name( 'Y' );
+			  	spacingFolder.add(Concentrics, 'randomSpacingVariance', 0, 50).name( 'Randomness' );
+			  	spacingFolder.open();
+			  	
+			  	var colorFolder = gui.addFolder( 'Colors' );
+			  	colorFolder.addColor(Concentrics, 'innerColor').name( 'Fill Color' );
+			  	colorFolder.addColor(Concentrics, 'outerColor').name( 'Stroke Color' );
+			  	colorFolder.add(Concentrics, 'alpha', 0, 1).name( 'Alpha' );
+			  	colorFolder.open();
+			  	
+			  	gui.add(Concentrics, 'drawSquares').name( 'Use Squares' );
+			  	gui.add(Concentrics, 'uploadImage').name( 'Upload Image' );
+			  	gui.add(Concentrics, 'clear').name( 'Clear Canvas' );
+			  	gui.add(Concentrics, 'draw').name( 'Draw' );
+			  	gui.add(Concentrics, 'save').name( 'Save' );
+			};
+		</script>
+
+	</head>
+
+
+	<body>
+		<div id='info'>
+			<a href="http://tholman.com/blog/concentrics"> <b>Concentrics:</b> </a> Another fun yet useless experiment from <a href="http://tholman.com"> Tim Holman </a> : <a href="http://twitter.com/twholman" > @Twholman </a>
+		</div>
+		<canvas id='canvas'></canvas>
+	</body>
+
+</html>
