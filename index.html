@@ -30,25 +30,25 @@
 				var gui = new dat.GUI();
 
 				var radiusFolder = gui.addFolder( 'Sizing' );
-				radiusFolder.add(Concentrics, 'baseRadius', 5, 100).name( 'Size' );
-				radiusFolder.add(Concentrics, 'randomRadiusVariance', 0, 50).name( 'Randomness' );
-				radiusFolder.add(Concentrics, 'innerRingSize', 1, 15).step(1).name( 'Inner Rings' );
-				radiusFolder.add(Concentrics, 'outerRingSize', 1, 15).step(1).name( 'Outer Rings' );
+				radiusFolder.add(Concentrics, 'baseRadius', 5, 100).name( 'Size' ).onFinishChange( function(value) { Concentrics.draw() } );
+				radiusFolder.add(Concentrics, 'randomRadiusVariance', 0, 50).name( 'Randomness' ).onFinishChange( function(value) { Concentrics.draw() } );
+				radiusFolder.add(Concentrics, 'innerRingSize', 1, 15).step(1).name( 'Inner Rings' ).onFinishChange( function(value) { Concentrics.draw() } );
+				radiusFolder.add(Concentrics, 'outerRingSize', 1, 15).step(1).name( 'Outer Rings' ).onFinishChange( function(value) { Concentrics.draw() } );
 				radiusFolder.open();
 
 				var spacingFolder = gui.addFolder( 'Spacing' );
-				spacingFolder.add(Concentrics, 'spacingX', 10, 100).name( 'X' );
-			  	spacingFolder.add(Concentrics, 'spacingY', 10, 100).name( 'Y' );
-			  	spacingFolder.add(Concentrics, 'randomSpacingVariance', 0, 50).name( 'Randomness' );
+				spacingFolder.add(Concentrics, 'spacingX', 10, 100).name( 'X' ).onFinishChange( function(value) { Concentrics.draw() } );
+			  	spacingFolder.add(Concentrics, 'spacingY', 10, 100).name( 'Y' ).onFinishChange( function(value) { Concentrics.draw() } );
+			  	spacingFolder.add(Concentrics, 'randomSpacingVariance', 0, 50).name( 'Randomness' ).onFinishChange( function(value) { Concentrics.draw() } );
 			  	spacingFolder.open();
 			  	
 			  	var colorFolder = gui.addFolder( 'Colors' );
-			  	colorFolder.addColor(Concentrics, 'innerColor').name( 'Fill Color' );
-			  	colorFolder.addColor(Concentrics, 'outerColor').name( 'Stroke Color' );
-			  	colorFolder.add(Concentrics, 'alpha', 0, 1).name( 'Alpha' );
+			  	colorFolder.addColor(Concentrics, 'innerColor').name( 'Fill Color' ).onFinishChange( function(value) { Concentrics.draw() } );
+			  	colorFolder.addColor(Concentrics, 'outerColor').name( 'Stroke Color' ).onFinishChange( function(value) { Concentrics.draw() } );
+			  	colorFolder.add(Concentrics, 'alpha', 0, 1).name( 'Alpha' ).onFinishChange( function(value) { Concentrics.draw() } );
 			  	colorFolder.open();
 			  	
-			  	gui.add(Concentrics, 'drawSquares').name( 'Use Squares' );
+			  	gui.add(Concentrics, 'drawSquares').name( 'Use Squares' ).onFinishChange( function(value) { Concentrics.draw() } );
 			  	gui.add(Concentrics, 'uploadImage').name( 'Use an Image' );
 			  	gui.add(Concentrics, 'clear').name( 'Clear Canvas' );
 			  	gui.add(Concentrics, 'draw').name( 'Re-Draw' );
