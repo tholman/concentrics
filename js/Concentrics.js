@@ -32,7 +32,11 @@ var Concentrics = {
     // Set up the visual canvas 
     this.canvas = document.getElementById( 'canvas' );
     this.context = canvas.getContext( '2d' );
-    this.canvas.width = window.innerWidth - 100;
+    if (window.innerHeight + 80 > window.innerWidth - 100)
+      this.canvas.width = window.innerWidth - 100;
+    else {
+      this.canvas.width = window.innerHeight + 80;
+    }
     this.canvas.height = window.innerHeight - 100;
     this.canvas.style.marginLeft = -this.canvas.width/2 + 'px';
     this.canvas.style.marginTop = -this.canvas.height/2 + 'px';
