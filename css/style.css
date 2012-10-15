@@ -42,6 +42,7 @@ font-family: Helvetica, Arial, "Lucida Grande";
     margin-left: 10px;
     margin-right: 5px;
     padding: 13px;
+    padding-right: 0px;
     position: absolute;
 }
 
