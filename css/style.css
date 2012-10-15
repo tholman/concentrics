@@ -15,6 +15,50 @@ canvas {
 
 /* ----- INFO & SHARING -----  */
 
+#back {
+font-family: Helvetica, Arial, "Lucida Grande";            
+ position: fixed;
+ top: 7px;
+ width: 190px;
+ height: 36px;
+ box-shadow: 0px 0px 4px 0px #888;
+ line-height: 10px;
+    left: -153px;
+    background: #fff;
+    
+    -webkit-transition: left 300ms; 
+       -moz-transition: left 300ms; 
+         -o-transition: left 300ms;
+          -ms-trantion: left 300ms;
+            transition: left 300ms;
+}
+
+#back:hover {
+    left: 0px;
+}
+
+#back a {
+ color: #1C86EE;
+    margin-left: 10px;
+    margin-right: 5px;
+    padding: 13px;
+    position: absolute;
+}
+
+#back a:hover {
+    color: hotpink; 
+}
+
+#back span {
+  font-size: 50px;
+ line-height: 25px;
+color: #444;
+ text-decoration: none;
+    font-family: Times;
+    position: absolute;
+    right: 10px;
+}
+
 #info-tab * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -23,28 +67,29 @@ canvas {
 
 #info-tab {
 
-	font-family: Helvetica, Arial, "Lucida Grande";
+    font-family: Helvetica, Arial, "Lucida Grande";
 
-	-webkit-box-shadow: 0px 0px 4px 0px #888;
-	box-shadow: 0px 0px 4px 0px #888;
+    -webkit-box-shadow: 0px 0px 4px 0px #888;
+    box-shadow: 0px 0px 4px 0px #888;
 
     -webkit-transition: left 400ms; 
        -moz-transition: left 400ms; 
          -o-transition: left 400ms;
           -ms-trantion: left 400ms;
-            transition: left 400ms; 
+            transition: left 400ms;
 
-	background-color: #ffffff;
+    background-color: #ffffff;
     height: 150px;
     position: fixed;
     padding-left: 5px;
     line-height: 36px;
     width: 630px;
-    margin-top: 15px;
+    margin-top: 11px;
     font-size: 17px;
     color: #444;
     left: -598px;
     z-index: 1000;
+    top: 40px;
 }
 
 #info-tab:hover {
@@ -52,7 +97,7 @@ canvas {
 }
 
 #info-tab:hover #title {
-	opacity: 0;   
+    opacity: 0;   
 }
 
 
@@ -71,10 +116,10 @@ canvas {
             transform: rotate( 90deg );
 
     -webkit-transform-origin: 100% 0%;
-	   -moz-transform-origin: 100% 0%;
+       -moz-transform-origin: 100% 0%;
         -ms-transform-origin: 100% 0%;
-	     -o-transform-origin: 100% 0%;
-	        transform-origin: 100% 0%;
+         -o-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
 
     float: right;
     width: 150px;
@@ -106,20 +151,20 @@ canvas {
 }
 
 #info-tab p {
-	position: absolute;
+    position: absolute;
     bottom: 0px;
-	font-size: 12px;
-	margin: 0px;
+    font-size: 12px;
+    margin: 0px;
 }
 
 #info-tab a {
-	color: #1C86EE;
+    color: #1C86EE;
 }
 
 #info-tab a:hover {
-	color: hotpink;
+    color: hotpink;
 }
 
 #info-tab iframe {
-	vertical-align: bottom;
+    vertical-align: bottom;
 }
