@@ -9,57 +9,36 @@
 		<!-- JS -->
 		<script type="text/javascript" src="js/libs/dat.gui.min.js"></script>
 		<script type="text/javascript" src="js/Concentrics.js"></script>
-		<script type="text/javascript">
-
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-22825241-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-
-		</script>
 
 	</head>
 
 
 	<body>
 
+		<!-- Header -->
 		<div id="info-tab"> 
-    		
     		<div class="info first">
         		<b>Concentrics</b> uses concentric circles and alternating colors to create generative styled art. Use your own image to add that personal touch!
         		<p> 
         			Made by: <a href="http://tholman.com"> Tim Holman </a> - <a href="http://twitter.com/twholman" title="You'll love my tweets, I promise ;)"> @twholman </a>
      			</p>
     		</div>
-    
     		<div class="info">
         		This has been made using <i> Javascript </i> and the HTML5 <i> canvas </i> element. You can find the source on <a href="http://github.com/tholman/concentrics">Github</a> or read about it on my <a href="http://tholman.com/blog/concentrics/"> blog </a>
-        
         		<p>
-
             		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://tholman.com/experiments/html5/concentrics" data-text="Concentrics - a neat generative #html5 + #javascript experiment by @twholman -"> Tweet </a>
-
            			<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ftholman.com%2Fexperiments%2Fhtml5%concentrics&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:107px; height:21px; margin-bottom: -1px;" allowTransparency="true"></iframe>
-
         		</p>
    			</div>
-    
     		<div id="title">Concentrics</div>
-
 		</div>
-
 		<div id="back">
     		<a href="/experiments"> More experiments </a> <span>&lsaquo;</span>
-		</div>  
+		</div>
+		<script type="text/javascript" src="js/header.js"></script>
 
+		<!-- APP -->
 		<canvas id='canvas'></canvas>
-
-				<!-- UI -->
 		<script>
 			Concentrics.init();
 			var gui = new dat.GUI();
@@ -90,10 +69,23 @@
 		  	gui.add(Concentrics, 'save').name( 'Save' );
 		</script>
 
-		<script type="text/javascript" src="js/header.js"></script>
+		<!-- Misc -->
+		<script type="text/javascript">
 
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-22825241-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 		</script>
+
 	</body>
 
 </html>

@@ -24,7 +24,7 @@ for (var i = 0; i < headers.length; i++ ) {
             
             headerToggleTimeOut[i] = setTimeout( function() {
                 _this.setAttribute( 'class', 'open' )
-            }, 100 );
+            }, 50 );
         }
                                                  
     }, false);
@@ -37,8 +37,35 @@ for (var i = 0; i < headers.length; i++ ) {
         
         headerToggleTimeOut[i] = setTimeout( function() {
             _this.setAttribute( 'class', '' )
-        }, 100 );
+        }, 50 );
             
     }, false);                   
-
 }
+
+function pulseHeader() {
+        
+    if (interval == undefined) { return };    
+    headers[1].setAttribute( 'class', 'highlight');
+    
+    setTimeout( function() {
+        if (interval == undefined) { return };
+        headers[1].setAttribute( 'class', '');
+        
+        setTimeout( function() {
+            if (interval == undefined) { return };
+            headers[1].setAttribute( 'class', 'highlight');
+            
+            setTimeout( function() {
+                if (interval == undefined) { return };
+                headers[1].setAttribute( 'class', '');
+                                             
+            }, 400 );
+            
+        }, 400 );
+        
+    }, 400 ); 
+}
+
+var interval = setInterval( function() {
+    pulseHeader();
+}, 10000 );
